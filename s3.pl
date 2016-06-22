@@ -15,7 +15,7 @@ my $s3 = Net::Amazon::S3->new(
 );
 
 
-my $response = $s3->buckets; #get  all buckets that i own
+my $response = $s3->buckets; 
 my $n=0;
 foreach my $bucket ( @{ $response->{buckets} } ) {
 	$n++;
@@ -28,7 +28,6 @@ $filename='2.log';
 $bucket->add_key( $filename, io->file( $filename )->all )
     or die $s3->err . ": " . $s3->errstr;
 
-# list files in the bucket
 $response = $bucket->list_all or die $s3->err . ": " . $s3->errstr;
 foreach my $key ( @{ $response->{keys} } ) {
       my $key_name = $key->{key};
