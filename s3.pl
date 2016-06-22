@@ -1,12 +1,11 @@
 use Net::Amazon::S3;
 use IO::All;
 
-# dont worry, will revoke this key vjust after crossover evaluation
+# dont worry, will revoke this key just after crossover evaluation
 my $aws_access_key_id     = 'AKIAJWMA5L2GGBNGYOPQ';
 my $aws_secret_access_key = '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';
 
 
-# dont worry, will revoke this key just after crossover evaluation
 my $s3 = Net::Amazon::S3->new(
     aws_access_key_id     => $aws_access_key_id,
     aws_secret_access_key => $aws_secret_access_key,
